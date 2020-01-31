@@ -32,8 +32,11 @@ class ScrollPage extends StatelessWidget {
       children: <Widget>[
         //_colorFondo(),
         //_imagenFondo(),
+       
         _fondoApp2(),
         _textos(),
+        _crearImagen(),
+        
 
       ],
     );
@@ -107,52 +110,6 @@ class ScrollPage extends StatelessWidget {
 
   }
 
-    Widget _fondoApp(){
-
-    final gradiente = Container(
-      width: double.infinity,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: FractionalOffset(0.0, 0.6),
-          end: FractionalOffset(0.0, 1.0),
-          colors: [
-            Color.fromRGBO(52, 54, 101, 1.0),
-            Color.fromRGBO(35, 37, 57, 1.0)
-          ]
-        )
-      ),
-    );
-
-
-    final cajaRosa = Transform.rotate(
-      angle: -pi / 5.0,
-      child: Container(
-        height: 360.0,
-        width: 360.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(80.0),
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(236, 98, 188, 1.0),
-              Color.fromRGBO(241, 142, 172, 1.0)
-            ]
-          )
-        ),
-      )
-    );
-    
-    return Stack(
-      children: <Widget>[
-        gradiente,
-        Positioned(
-          top: -100.0,
-          child: cajaRosa
-        )
-      ],
-    );
-
-  }
 
   Widget _textos(){
     final estiloTexto = TextStyle(color: Colors.white, fontSize: 50.0);
@@ -161,7 +118,7 @@ class ScrollPage extends StatelessWidget {
       child: Column(
         children: <Widget>[
           SizedBox(height: 20.0,),
-          Text('Lavanderia', style: estiloTexto),
+          Text('Lavandería', style: estiloTexto),
           Text('Rápida', style: estiloTexto,),
           Expanded(
             child: Container(),
@@ -194,6 +151,7 @@ class ScrollPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           _fondoApp2(),
+          _textos2(),
 
           SingleChildScrollView(
             child: Column(
@@ -206,88 +164,26 @@ class ScrollPage extends StatelessWidget {
 
         ],
       ),
-      bottomNavigationBar: _bottomNavigationBar(context)
+     
     );
   }
 
   Widget _crearImagen() {
       return Container(
+              padding: EdgeInsets.symmetric(vertical: 330.0),
               width: double.infinity,
               child: Image(
-              image: NetworkImage('https://www.hoerrschaudt.com/wp-content/uploads/2019/11/McGovern_Landing.jpg'),
+              image: NetworkImage('https://www.diariamenteali.com/medias/023-Lavanderia-siempre-ordenada.jpg?context=bWFzdGVyfGltYWdlc3wxMjA2MjV8aW1hZ2UvanBlZ3xoN2UvaGJlLzg3OTkyNTY3MDcxMDIvMDIzLS0tTGF2YW5kZXJpYS1zaWVtcHJlLW9yZGVuYWRhLmpwZ3xhMGY1YWI1ODczMGI1ZWViZTA0ODM0NzRlNDQ1NDM1NThiN2RhNTMzMTMyZTM4MDljZDYzMDVlMGUzYjRiZmQz'),
               height: 200.0,
               fit: BoxFit.cover,
             ),
       );
   }
 
-  Widget _crearTitulo(){
-   return SafeArea(
-        child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-              child: Row(
-                children: <Widget>[
-
-                  Expanded(
-                      child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text('Lavanderia Rápida', style: estiloTitulo,),
-                        SizedBox(height: 7.0),
-                        Text('Lavamos su ropa', style: estilosubTitulo,)
-                      ],
-                      ),
-                  ),
-
-                    Icon(Icons.star, color: Colors.red, size: 30.0),
-                    Text('41', style: TextStyle( fontSize: 20.0 ))
-
-                ],
-                ),
-            ),
-   );
-  }
-
-  Widget _crearAcciones(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-
-        _accion( Icons.call, 'CALL' ),
-        _accion( Icons.near_me, 'ROUTE' ),
-        _accion( Icons.share, 'Share' ),
-
-        
-
-      ],
-    );
-  }
-
-  Widget _accion(IconData icon, String texto) {
-
-    return Column(
-          children: <Widget>[
-            Icon( icon, color: Colors.blue, size: 40.0, ),
-            SizedBox(height: 5.0,),
-            Text( texto, style: TextStyle( fontSize: 15.0, color: Colors.blue ), )
-          ],
-        );
-
-  }
 
 
-  Widget _crearTexto() {
-    return SafeArea(
-        child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 40.0),
-        child: Text(
-          'Dirección: Jr. Jorge Chavez 1154 - Breña \n\nTeléfono: 966167314', 
-          textAlign: TextAlign.justify,
-          style: TextStyle(fontSize: 20.0, color: Colors.blue),
-        ),
-      ),
-    );
-  }
+
+
     
   }
 
@@ -395,7 +291,7 @@ class ScrollPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Lavanderia Rápida', style: TextStyle( color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold )),
+            Text('Lavandería Rápida', style: TextStyle( color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold )),
             SizedBox( height: 10.0 ),
             Text('Servicios especiales', style: TextStyle( color: Colors.white, fontSize: 18.0 )),
           ],
@@ -413,7 +309,7 @@ class ScrollPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Lavanderia Rápida', style: TextStyle( color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold )),
+            Text('Lavandería Rápida', style: TextStyle( color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold )),
             SizedBox( height: 10.0 ),
             Text('Información', style: TextStyle( color: Colors.white, fontSize: 18.0 )),
           ],
@@ -465,13 +361,13 @@ class ScrollPage extends StatelessWidget {
         ),
         TableRow(
           children: [
-            //_crearBotonRedondeado( Colors.pinkAccent, Icons.business_center, 'Teléfono: 9966167314' ),
-            _crearBotonRedondeado( Colors.pinkAccent, FontAwesomeIcons.phone, 'Teléfono: 9966167314' ),
+            //_crearBotonRedondeado( Colors.pinkAccent, Icons.business_center, 'Teléfono: 966167314' ),
+            _crearBotonRedondeado( Colors.pinkAccent, FontAwesomeIcons.phone, 'Teléfono: 966167314' ),
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.green, FontAwesomeIcons.whatsapp, 'WhatsApp: 9966167314' ),
+            _crearBotonRedondeado( Colors.green, FontAwesomeIcons.whatsapp, 'WhatsApp: 966167314' ),
           ]
         ),
       ],
