@@ -459,13 +459,19 @@ class ScrollPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.blue, FontAwesomeIcons.gamepad, 'Dirección: Jr. Jorge Chavez 1154' ),
+            _crearBotonRedondeado( Colors.blue, FontAwesomeIcons.streetView, 'Dirección: Jr. Jorge Chavez 1154' ),
 
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.pinkAccent, Icons.business_center, 'Teléfono: 9966167314' ),
+            //_crearBotonRedondeado( Colors.pinkAccent, Icons.business_center, 'Teléfono: 9966167314' ),
+            _crearBotonRedondeado( Colors.pinkAccent, FontAwesomeIcons.phone, 'Teléfono: 9966167314' ),
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado( Colors.green, FontAwesomeIcons.whatsapp, 'WhatsApp: 9966167314' ),
           ]
         ),
       ],
@@ -482,20 +488,21 @@ class ScrollPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.blue, Icons.thumb_up, 'Lavado por kilo' ),
-            _crearBotonRedondeado( Colors.purpleAccent, Icons.web_asset, 'Lavado por cesto' ),
+            //_crearBotonRedondeado( Colors.blue, Icons.thumb_up, 'Lavado por kilo' ),
+            _crearBotonRedondeado( Colors.blue, FontAwesomeIcons.weight, 'Lavado por kilo' ),
+            _crearBotonRedondeado( Colors.purpleAccent, FontAwesomeIcons.parachuteBox, 'Lavado por cesto' ),
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.pinkAccent, Icons.business_center, 'Ternos' ),
-            _crearBotonRedondeado( Colors.orange, Icons.fiber_new, 'Sábanas' ),
+            _crearBotonRedondeado( Colors.pinkAccent, FontAwesomeIcons.userTie, 'Ternos' ),
+            _crearBotonRedondeado( Colors.orange, FontAwesomeIcons.bed, 'Sábanas' ),
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.blueAccent, Icons.home, 'Cortinas' ),
-            _crearBotonRedondeado( Colors.green, Icons.pets, 'Zapatillas' ),
+            _crearBotonRedondeado( Colors.blueAccent, FontAwesomeIcons.personBooth, 'Cortinas' ),
+            _crearBotonRedondeado( Colors.green, FontAwesomeIcons.shoePrints, 'Zapatillas' ),
           ]
         ),
       ],
