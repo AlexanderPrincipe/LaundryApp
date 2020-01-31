@@ -459,7 +459,7 @@ class ScrollPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.blue, FontAwesomeIcons.streetView, 'Dirección: Jr. Jorge Chavez 1154' ),
+            _crearBotonRedondeado( Colors.blue, FontAwesomeIcons.streetView, 'Dirección: Jr. Jorge Chavez 1154 - Breña' ),
 
           ]
         ),
